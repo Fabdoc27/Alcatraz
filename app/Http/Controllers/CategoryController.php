@@ -13,7 +13,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::latest()->paginate(10);
+
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -21,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -29,15 +31,16 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
-    }
+        $validated = $request->validated();
+        $validated['slug'] = str($validated['name'])->slug();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Category $category)
-    {
-        //
+        $category = Category::create($validated);
+
+        if ($category) {
+            return to_route('admin.categories.index')->with(['success' => 'Category Created Successfully.']);
+        }
+
+        return back();
     }
 
     /**
@@ -45,7 +48,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -53,7 +56,15 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $validated = $request->validated();
+
+        if ($validated['name'] !== $category->name) {
+            $validated['slug'] = str($validated['name'])->slug();
+        }
+
+        $category->updateOrFail($validated);
+
+        return to_route('admin.categories.index')->with(['success' => 'Category Updated Successfully.']);
     }
 
     /**
@@ -61,6 +72,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->deleteOrFail();
+
+        return to_route('admin.categories.index')->with(['success' => 'Category Deleted Successfully.']);
     }
 }

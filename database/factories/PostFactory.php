@@ -25,7 +25,7 @@ class PostFactory extends Factory
             'category_id' => Category::inRandomOrder()->first()->id,
             'title' => $title,
             'slug' => str($title)->slug(),
-            'content' => fake()->realText(500),
+            'content' => fake()->realText(1500),
             'views' => fake()->numberBetween(100, 1000),
         ];
     }

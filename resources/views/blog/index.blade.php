@@ -68,6 +68,7 @@
                 </h3>
             @endforelse
 
+            {{-- Paginate --}}
             {{ $posts->links() }}
         </section>
 
@@ -101,9 +102,9 @@
                     Follow Me On Social Media
                 </h5>
                 <div class="flex flex-row flex-wrap gap-2 text-gray-400">
-                    <!-- Github Icon -->
+                    {{-- Github Icon  --}}
                     <a class="inline-flex items-center justify-center gap-2 px-3 py-3 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
-                        href="https://github.com/alnahian2003" target="_blank">
+                        href="https://github.com/Fabdoc27" target="_blank">
                         <span class="[&>svg]:h-5 [&>svg]:w-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 496 512">
                                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
@@ -113,9 +114,9 @@
                         </span>
                     </a>
 
-                    <!-- Facebook Icon -->
+                    {{-- Facebook Icon  --}}
                     <a class="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
-                        href="https://facebook.com/alnahian2003" target="_blank">
+                        href="https://www.facebook.com/fabdoc27" target="_blank">
                         <span class="[&>svg]:h-5 [&>svg]:w-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
                                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
@@ -125,9 +126,9 @@
                         </span>
                     </a>
 
-                    <!-- Twitter/X Icon -->
+                    {{-- Twitter/X Icon  --}}
                     <a class="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
-                        href="https://x.com/alnahian2003" target="_blank">
+                        href="https://x.com/fabdoc27" target="_blank">
                         <span class="[&>svg]:h-5 [&>svg]:w-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
                                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
@@ -137,26 +138,14 @@
                         </span>
                     </a>
 
-                    <!-- LinkedIn Icon -->
+                    {{-- LinkedIn Icon  --}}
                     <a class="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
-                        href="https://linkedin.com/in/alnahian2003" target="_blank">
+                        href="https://www.linkedin.com/in/ashraful-karim" target="_blank">
                         <span class="[&>svg]:h-5 [&>svg]:w-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
                                 <path
                                     d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-                            </svg>
-                        </span>
-                    </a>
-
-                    <!-- Behance Icon -->
-                    <a class="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
-                        href="https://behance.net/alnahian2003" target="_blank">
-                        <span class="[&>svg]:h-5 [&>svg]:w-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512">
-                                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-                                <path
-                                    d="M232 237.2c31.8-15.2 48.4-38.2 48.4-74 0-70.6-52.6-87.8-113.3-87.8H0v354.4h171.8c64.4 0 124.9-30.9 124.9-102.9 0-44.5-21.1-77.4-64.7-89.7zM77.9 135.9H151c28.1 0 53.4 7.9 53.4 40.5 0 30.1-19.7 42.2-47.5 42.2h-79v-82.7zm83.3 233.7H77.9V272h84.9c34.3 0 56 14.3 56 50.6 0 35.8-25.9 47-57.6 47zm358.5-240.7H376V94h143.7v34.9zM576 305.2c0-75.9-44.4-139.2-124.9-139.2-78.2 0-131.3 58.8-131.3 135.8 0 79.9 50.3 134.7 131.3 134.7 61.3 0 101-27.6 120.1-86.3H509c-6.7 21.9-34.3 33.5-55.7 33.5-41.3 0-63-24.2-63-65.3h185.1c.3-4.2 .6-8.7 .6-13.2zM390.4 274c2.3-33.7 24.7-54.8 58.5-54.8 35.4 0 53.2 20.8 56.2 54.8H390.4z" />
                             </svg>
                         </span>
                     </a>
