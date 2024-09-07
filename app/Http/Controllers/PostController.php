@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::latest()->paginate(10);
+
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -21,7 +25,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::latest()->get();
+
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -29,15 +35,16 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
-    }
+        $validated = $request->validated();
+        $validated['slug'] = str($validated['title'])->slug();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post)
-    {
-        //
+        $post = Auth::user()->posts()->create($validated);
+
+        if ($post) {
+            return to_route('admin.posts.index')->with(['success' => 'Post Created Successfully.']);
+        }
+
+        return back();
     }
 
     /**
@@ -45,7 +52,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $categories = Category::latest()->get();
+
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -53,7 +62,15 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $validated = $request->validated();
+
+        if ($validated['title'] !== $post->title) {
+            $validated['slug'] = str($validated['title'])->slug();
+        }
+
+        $post->updateOrFail($validated);
+
+        return to_route('admin.posts.index')->with(['success' => 'Post Updated Successfully.']);
     }
 
     /**
@@ -61,6 +78,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->deleteOrFail();
+
+        return to_route('admin.posts.index')->with(['success' => 'Post Deleted Successfully.']);
     }
 }
