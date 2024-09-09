@@ -12,6 +12,7 @@ class SingleArticleController extends Controller
      */
     public function __invoke(Request $request, Post $post)
     {
+        $post->load('user', 'category');
         $post->increment('views');
 
         return view('blog.show', compact('post'));

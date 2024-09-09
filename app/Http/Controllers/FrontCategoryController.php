@@ -12,8 +12,8 @@ class FrontCategoryController extends Controller
      */
     public function __invoke(Request $request, Category $category)
     {
-        $posts = $category->posts()->latest()->paginate(10);
-        $categories = Category::latest()->get();
+        $posts = $category->posts()->with('user', 'category')->latest()->paginate(10);
+        $categories = Category::withCount('posts')->latest()->get();
 
         return view('blog.index', compact('posts', 'categories'));
     }

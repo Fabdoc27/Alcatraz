@@ -71,7 +71,7 @@
                                             {{ $category->slug }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ number_format($category->posts->count()) }}
+                                            {{ number_format($category->posts_count) }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $category->created_at->diffForHumans() }}

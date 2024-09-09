@@ -86,7 +86,7 @@
                             href="{{ route('blog.categories', $category->slug) }}">{{ $category->name }}
                             <span
                                 class="text-sm font-medium transition rounded-full py-0.5 w-6 h-6 text-center bg-emerald-800/40 text-emerald-400 ring-1 ring-emerald-400/20">
-                                {{ $category->posts->count() }}
+                                {{ $category->posts_count }}
                             </span>
                         </a>
                     @empty
