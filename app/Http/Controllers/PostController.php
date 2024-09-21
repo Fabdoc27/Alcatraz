@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::latest()->get(['id', 'name']);
+        $categories = Category::latest()->get();
 
         return view('admin.posts.create', compact('categories'));
     }
@@ -53,7 +53,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $post->load('category');
-        $categories = Category::latest()->get(['id', 'name']);
+        $categories = Category::latest()->get();
 
         return view('admin.posts.edit', compact('post', 'categories'));
     }
