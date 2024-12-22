@@ -9,8 +9,7 @@
         {{-- Posts  --}}
         <section class="flex flex-col gap-8 xl:col-span-8">
             @forelse ($posts as $post)
-                <article
-                    class="w-full rounded-xl p-6 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-6">
+                <article class="w-full rounded-xl p-6 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-6">
                     <div class="flex flex-row items-center justify-between">
                         {{-- Category Pill  --}}
                         <div>
@@ -45,8 +44,7 @@
                     <div class="flex flex-row items-center justify-between">
                         {{-- Author Info  --}}
                         <div class="flex items-center gap-2">
-                            <img class="w-8 h-8 p-0.5 rounded-full ring-1 ring-emerald-500"
-                                src="https://avatars.githubusercontent.com/u/109924046?v=4" alt="{{ $post->user->name }}" />
+                            <img class="w-8 h-8 p-0.5 rounded-full ring-1 ring-emerald-500" src="https://avatars.githubusercontent.com/u/109924046?v=4" alt="{{ $post->user->name }}" />
                             <h4>{{ $post->user->name }}</h4>
                         </div>
 
@@ -54,10 +52,8 @@
                         <a class="inline-flex gap-0.5 justify-center overflow-hidden text-base font-medium transition text-emerald-400 hover:text-emerald-500"
                             href="{{ route('blog.show', $post->slug) }}">
                             Read more
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"
-                                class="mt-0.5 h-5 w-5 relative top-px -mr-1">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
+                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="mt-0.5 h-5 w-5 relative top-px -mr-1">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path>
                             </svg>
                         </a>
                     </div>
@@ -75,8 +71,7 @@
         {{-- Sidebar Widgets --}}
         <section class="flex flex-col gap-8 xl:col-span-4">
             {{-- Widget 1 --}}
-            <div
-                class="w-full rounded-xl p-4 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-4">
+            <div class="w-full rounded-xl p-4 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-4">
                 <h5 class="text-lg font-semibold md:text-xl">Browse Categories</h5>
 
                 {{-- Categories with Post Count  --}}
@@ -84,8 +79,7 @@
                     @forelse ($categories as $category)
                         <a class="inline-flex items-center justify-center gap-2 px-3 py-1 text-lg font-medium transition rounded-full ring-1 ring-inset text-zinc-400 ring-white/10 hover:bg-white/5 hover:text-white"
                             href="{{ route('blog.categories', $category->slug) }}">{{ $category->name }}
-                            <span
-                                class="text-sm font-medium transition rounded-full py-0.5 w-6 h-6 text-center bg-emerald-800/40 text-emerald-400 ring-1 ring-emerald-400/20">
+                            <span class="text-sm font-medium transition rounded-full py-0.5 w-6 h-6 text-center bg-emerald-800/40 text-emerald-400 ring-1 ring-emerald-400/20">
                                 {{ $category->posts_count }}
                             </span>
                         </a>
@@ -96,8 +90,7 @@
             </div>
 
             {{-- Widget 2 --}}
-            <div
-                class="w-full rounded-xl p-4 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-4">
+            <div class="w-full rounded-xl p-4 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-4">
                 <h5 class="text-lg font-semibold md:text-xl">
                     Follow Me On Social Media
                 </h5>

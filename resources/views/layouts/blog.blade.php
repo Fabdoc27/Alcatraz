@@ -12,15 +12,11 @@
 <body class="antialiased bg-zinc-900">
     {{-- BG Gradient  --}}
     <div class="absolute inset-0 mx-0 overflow-hidden -z-10 max-w-none">
-        <div
-            class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] [mask-image:linear-gradient(white,transparent)] z-[-100] overflow-visible">
-            <div
-                class="absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] from-[#36b49f]/30 to-[#DBFF75]/30 opacity-100">
-                <svg aria-hidden="true"
-                    class="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 mix-blend-overlay stroke-white/5">
+        <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] [mask-image:linear-gradient(white,transparent)] z-[-100] overflow-visible">
+            <div class="absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] from-[#36b49f]/30 to-[#DBFF75]/30 opacity-100">
+                <svg aria-hidden="true" class="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 mix-blend-overlay stroke-white/5">
                     <defs>
-                        <pattern id=":S1:" width="72" height="56" patternUnits="userSpaceOnUse" x="-12"
-                            y="4">
+                        <pattern id=":S1:" width="72" height="56" patternUnits="userSpaceOnUse" x="-12" y="4">
                             <path d="M.5 56V.5H72" fill="none"></path>
                         </pattern>
                     </defs>

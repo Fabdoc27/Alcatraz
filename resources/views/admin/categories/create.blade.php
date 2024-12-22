@@ -17,8 +17,7 @@
                         @csrf
                         <div>
                             <x-input-label for="name" value="Name" class="mb-2" />
-                            <x-text-input id="name" name="name" type="text" class="block w-full mt-1"
-                                :value="old('name')" required autofocus autocomplete="name" />
+                            <x-text-input id="name" name="name" type="text" class="block w-full mt-1" :value="old('name')" required autofocus autocomplete="name" />
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
 

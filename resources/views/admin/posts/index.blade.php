@@ -24,8 +24,7 @@
                     @if (session('success'))
                         <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
                             role="alert">
-                            <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                             </svg>
@@ -37,8 +36,7 @@
                     {{-- Posts Table --}}
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
-                            <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Title
@@ -65,10 +63,8 @@
                             </thead>
                             <tbody>
                                 @forelse ($posts as $post)
-                                    <tr
-                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <th scope="row"
-                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $post->title }}
                                         </th>
                                         <td class="px-6 py-4 whitespace-nowrap">
@@ -84,30 +80,24 @@
                                             {{ $post->created_at->diffForHumans() }}
                                         </td>
                                         <td class="px-6 py-4 space-x-4">
-                                            <a class="font-medium text-teal-600 hover:underline dark:text-teal-500"
-                                                href="{{ route('blog.show', $post) }}" target="_blank">
+                                            <a class="font-medium text-teal-600 hover:underline dark:text-teal-500" href="{{ route('blog.show', $post) }}" target="_blank">
                                                 View
                                             </a>
-                                            <a href="{{ route('admin.posts.edit', $post) }}"
-                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                            <a href="{{ route('admin.posts.edit', $post) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                                 Edit
                                             </a>
-                                            <form class="inline-flex" action="{{ route('admin.posts.destroy', $post) }}"
-                                                method="POST" onclick="return confirm('Are you sure?')">
+                                            <form class="inline-flex" action="{{ route('admin.posts.destroy', $post) }}" method="POST" onclick="return confirm('Are you sure?')">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit"
-                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">
+                                                <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">
                                                     Delete
                                                 </button>
                                             </form>
                                         </td>
                                     </tr>
                                 @empty
-                                    <tr
-                                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                        <th scope="row"
-                                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             No posts avaiable.
                                         </th>
                                         <td class="px-6 py-4"></td>

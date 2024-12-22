@@ -16,8 +16,7 @@
                 </svg>
                 Back
             </a>
-            <article
-                class="w-full rounded-xl p-6 md:p-10 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-6">
+            <article class="w-full rounded-xl p-6 md:p-10 text-white shadow-lg bg-zinc-900/20 ring-1 backdrop-blur-[2px] ring-white/15 space-y-6">
                 {{-- Main Content  --}}
                 <div>
                     {{-- Article Title  --}}
@@ -26,12 +25,10 @@
                     </h3>
 
                     {{-- Meta Info  --}}
-                    <div
-                        class="flex flex-row flex-wrap items-center justify-center gap-4 my-6 text-center divide-x divide-zinc-700">
+                    <div class="flex flex-row flex-wrap items-center justify-center gap-4 my-6 text-center divide-x divide-zinc-700">
                         {{-- Author Info  --}}
                         <div class="flex items-center gap-2">
-                            <img class="w-8 h-8 p-0.5 rounded-full ring-1 ring-emerald-500"
-                                src="https://avatars.githubusercontent.com/u/109924046?v=4" alt="{{ $post->user->name }}" />
+                            <img class="w-8 h-8 p-0.5 rounded-full ring-1 ring-emerald-500" src="https://avatars.githubusercontent.com/u/109924046?v=4" alt="{{ $post->user->name }}" />
                             <h4>{{ $post->user->name }}</h4>
                         </div>
                         {{-- Date  --}}
@@ -50,8 +47,7 @@
                             <div class="inline-flex items-center justify-center gap-1 px-3 py-1 overflow-hidden text-sm font-medium text-orange-400 transition rounded-full sm:text-base bg-orange-400/10 ring-1 ring-inset ring-orange-400/20"
                                 href="/#">
                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        class="size-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
                                         <path d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                                         <path fill-rule="evenodd"
                                             d="M.664 10.59a1.651 1.651 0 0 1 0-1.186A10.004 10.004 0 0 1 10 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0 1 10 17c-4.257 0-7.893-2.66-9.336-6.41ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
